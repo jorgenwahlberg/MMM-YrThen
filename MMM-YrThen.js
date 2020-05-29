@@ -63,7 +63,7 @@ Module.register('MMM-YrThen', {
         var self = this;
         setInterval(function() {
             self.updateDom(1000);
-        },60000);
+        },this.config.updateInterval);
     },
 
     round: function(value, precision){
@@ -290,16 +290,16 @@ Module.register('MMM-YrThen', {
                         else maxTempCell.innerHTML = tempValue;
                     }
                     else{
-                        maxTempCell.innerHTML = tempValue;
+                        maxTempCell.innerHTML = tempValue + '˚';
                     }
                     maxTempCell.className = "align-right bright yrthen-temp " + this.config.size;
                     row.appendChild(maxTempCell);
-
-                    var minTempCell = document.createElement("td");
-                    minTempCell.innerHTML = this.round(newData.precipitation.value, 1);
-                    minTempCell.className = "align-right yrthen-prec dimmed";
-                    row.appendChild(minTempCell);
-
+                    if(this.config.showPrecipitation){
+                        var minTempCell = document.createElement("td");
+                        minTempCell.innerHTML = this.round(newData.precipitation.value, 1);
+                        minTempCell.className = "align-right yrthen-prec dimmed";
+                        row.appendChild(minTempCell);
+                    }
                     if(this.config.windShow){
                         windValue = '';
                         var windCell = document.createElement("td");
