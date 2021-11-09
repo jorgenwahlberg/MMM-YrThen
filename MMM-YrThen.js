@@ -169,7 +169,7 @@ Module.register('MMM-YrThen', {
                     icon.className = "yrthen-icon";
     //                icon.width = "40";
                     var weatherSymbol = this.calculateWeatherSymbolId(newData.symbol);
-                    icon.src = this.file(printf('images/%s.png', weatherSymbol));
+                    icon.src = this.file(printf('images/%s.svg', weatherSymbol));
                     forecastCell.appendChild(icon);
                     forecastCell.innerHTML += '<br>';
                     if(this.config.roundTemp){
@@ -272,7 +272,7 @@ Module.register('MMM-YrThen', {
                     icon.width = "60";
                     icon.height = "60";
                     var weatherSymbol = this.calculateWeatherSymbolId(newData.symbol);
-                    icon.src = this.file(printf('images/%s.png', weatherSymbol));
+                    icon.src = this.file(printf('images/%s.svg', weatherSymbol));
                     iconCell.appendChild(icon);
         
                     var maxTempCell = document.createElement("td");
