@@ -16,6 +16,11 @@ Clone the repository:
 
 	git clone https://github.com/fmandal/MMM-YrThen
 
+Install dependencies:
+
+        cd MMM-YrThen
+        npm install request --save
+
 Add the module to the modules array in the config/config.js file by adding the following section. You can change this configuration later when you see this works:
 
 	{
